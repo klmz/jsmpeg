@@ -107,13 +107,13 @@ io.on('connection', function(socket) {
         switch (msg.type) {
             case 'lights':
                 if (msg.data == 'on') {
-                    console.log("Turn light on");
+                    console.log("Turn light on with bri=" + msg.bri);
                     request({
                         url: hueUrl,
                         method: 'PUT',
                         json: {
                             "on": true,
-                            "bri": msg.data.bri
+                            "bri": msg.bri
                         }
                     }, function(e) {
                             console.log(e);

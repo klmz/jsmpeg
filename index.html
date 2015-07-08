@@ -30,13 +30,38 @@
 			<a href="http://www.apple.com/safari/">Safari</a> or Internet Explorer 10
 		</p>
 	</canvas>
+	<span>
+		<button id='btnOn'>Licht aan</button>
+		<button id='btnOff'>Licht uit</button>
+		<input type='range' min=0 max=255 value=255 id="rngBri"/>
+	</span>
 	<script type="text/javascript" src="jsmpg.js"></script>
 	<script type="text/javascript">
 		// Setup the WebSocket connection and start the player
 		var client = new WebSocket( 'ws://84.106.64.128:8084/' );
-
 		var canvas = document.getElementById('videoCanvas');
 		var player = new jsmpeg(client, {canvas:canvas});
+
+		var socket = new WebSocket('ws://84.106.64.128:5002/');
+		btnOn = document.getElementById("btnOn");
+		btnOff = document.getElementById("btnOff");
+		rngBri = document.getElementById("rngBri");
+		btnOn.onclick = function() {
+	        console.log('test');
+	        socket.send(JSON.stringify({
+	            type: 'lights',
+	            data: 'on',
+	            bri: rngBri.value
+	        }));
+	    }
+
+	    btnOff.onclick = function() {
+	        console.log('test');
+	        socket.send(JSON.stringify({
+	            type: 'lights',
+	            data: 'off'
+	        }));
+	    }
 	</script>
 </body>
 </html>
