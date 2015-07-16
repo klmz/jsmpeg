@@ -145,7 +145,19 @@ div {
 		btnOn = document.getElementById("btnOn");
 		btnOff = document.getElementById("btnOff");
 		rngBri = document.getElementById("rngBri");
-
+		function setBrightness(force){
+			var bri = rngBri.value;
+	    	var t = (new Date()).getTime();
+	    	if(force || t > last+rate){
+	    		console.log(bri);
+	    		last = t;
+	    		socket.send(JSON.stringify({
+	            type: 'lights',
+	            data: 'on',
+	            bri: bri
+	        }));
+	    	}
+		}
 		btnOn.onclick = function() {
 	        console.log('test');
 	        socket.send(JSON.stringify({
@@ -164,18 +176,14 @@ div {
 	    }
 	    
 	    rngBri.oninput = function(event){
-	    	var bri = rngBri.value;
-	    	var t = (new Date()).getTime();
-	    	if(t > last+rate){
-	    		console.log(bri);
-	    		last = t;
-	    		socket.send(JSON.stringify({
-	            type: 'lights',
-	            data: 'on',
-	            bri: bri
-	        }));
-	    	}
+	    	setBrightness(false);
 	    }
+
+	    rngBri.onchange = function(event){
+	    	setBrightness(true);
+	    }
+
+
 	</script>
 </body>
 </html>
