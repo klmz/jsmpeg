@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- <meta name="viewport" content="width=320, initial-scale=1"/> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=320, initial-scale=1"/>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<script type='text/javascript' src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+
 	<title>jsmpeg streaming</title>
 	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"> -->
 	<style type="text/css">
@@ -12,88 +14,88 @@
 		text-align: center;
 		/* Basic Grey */
 	}
-.basic-grey {
-    margin-left:auto;
-    margin-right:auto;
-    max-width: 500px;
-    background: #333;
-    padding: 25px 15px 25px 10px;
-    font: 12px Georgia, "Times New Roman", Times, serif;
-    color: #888;
-    text-shadow: 1px 1px 1px #FFF;
-    border:1px solid #555;
-}
-.basic-grey h1 {
-    font-size: 25px;
-    padding: 0px 0px 10px 40px;
-    display: block;
-    border-bottom:1px solid #E4E4E4;
-    margin: -10px -15px 30px -10px;;
-    color: #888;
-}
-.basic-grey h1>span {
-    display: block;
-    font-size: 11px;
-}
-.basic-grey label {
-    display: block;
-    margin: 0px;
-}
-.basic-grey label>span {
-    float: left;
-    width: 20%;
-    text-align: right;
-    padding-right: 10px;
-    margin-top: 10px;
-    color: #888;
-}
-.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
-    border: 1px solid #DADADA;
-    color: #888;
-    height: 30px;
-    margin-bottom: 16px;
-    margin-right: 6px;
-    margin-top: 2px;
-    outline: 0 none;
-    padding: 3px 3px 3px 5px;
-    width: 70%;
-    font-size: 12px;
-    line-height:15px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-}
-.basic-grey textarea{
-    padding: 5px 3px 3px 5px;
-}
-.basic-grey select {
-    background: #FFF url('down-arrow.png') no-repeat right;
-    background: #FFF url('down-arrow.png') no-repeat right);
-    appearance:none;
-    -webkit-appearance:none; 
-    -moz-appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
-    width: 70%;
-    height: 35px;
-    line-height: 25px;
-}
-.basic-grey textarea{
-    height:100px;
-}
-.basic-grey .button {
-    background: #E27575;
-    border: none;
-    padding: 10px 25px 10px 25px;
-    color: #FFF;
-    box-shadow: 1px 1px 5px #B6B6B6;
-    border-radius: 3px;
-    text-shadow: 1px 1px 1px #9E3F3F;
-    cursor: pointer;
-}
-.basic-grey .button:hover {
-    background: #CF7A7A
-}
+		.basic-grey {
+		    margin-left:auto;
+		    margin-right:auto;
+		    max-width: 500px;
+		    background: #333;
+		    padding: 25px 15px 25px 10px;
+		    font: 12px Georgia, "Times New Roman", Times, serif;
+		    color: #888;
+		    text-shadow: 1px 1px 1px #FFF;
+		    border:1px solid #555;
+		}
+		.basic-grey h1 {
+		    font-size: 25px;
+		    padding: 0px 0px 10px 40px;
+		    display: block;
+		    border-bottom:1px solid #E4E4E4;
+		    margin: -10px -15px 30px -10px;;
+		    color: #888;
+		}
+		.basic-grey h1>span {
+		    display: block;
+		    font-size: 11px;
+		}
+		.basic-grey label {
+		    display: block;
+		    margin: 0px;
+		}
+		.basic-grey label>span {
+		    float: left;
+		    width: 20%;
+		    text-align: right;
+		    padding-right: 10px;
+		    margin-top: 10px;
+		    color: #888;
+		}
+		.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+		    border: 1px solid #DADADA;
+		    color: #888;
+		    height: 30px;
+		    margin-bottom: 16px;
+		    margin-right: 6px;
+		    margin-top: 2px;
+		    outline: 0 none;
+		    padding: 3px 3px 3px 5px;
+		    width: 70%;
+		    font-size: 12px;
+		    line-height:15px;
+		    box-shadow: inset 0px 1px 4px #ECECEC;
+		    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+		    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+		}
+		.basic-grey textarea{
+		    padding: 5px 3px 3px 5px;
+		}
+		.basic-grey select {
+		    background: #FFF url('down-arrow.png') no-repeat right;
+		    background: #FFF url('down-arrow.png') no-repeat right);
+		    appearance:none;
+		    -webkit-appearance:none; 
+		    -moz-appearance: none;
+		    text-indent: 0.01px;
+		    text-overflow: '';
+		    width: 70%;
+		    height: 35px;
+		    line-height: 25px;
+		}
+		.basic-grey textarea{
+		    height:100px;
+		}
+		.basic-grey .button {
+		    background: #E27575;
+		    border: none;
+		    padding: 10px 25px 10px 25px;
+		    color: #FFF;
+		    box-shadow: 1px 1px 5px #B6B6B6;
+		    border-radius: 3px;
+		    text-shadow: 1px 1px 1px #9E3F3F;
+		    cursor: pointer;
+		}
+		.basic-grey .button:hover {
+		    background: #CF7A7A
+		}
 
 		#videoCanvas {
 			/* Always stretch the canvas to 640x480, regardless of its
@@ -101,10 +103,16 @@
 			width: 640px;
 			height: 480px;
 		}
-div {
-	text-align: center;
-	
-}
+		#videoCanvas:fullscreen {
+			/* Always stretch the canvas to 640x480, regardless of its
+			internal size. */
+			width: 100%;
+			height: inherit;
+		}
+		div {
+			text-align: center;
+			
+		}
 
 </style>
 </head>
@@ -113,7 +121,7 @@ div {
 		change this internal resolution to whatever the source provides. The size the
 		canvas is displayed on the website is dictated by the CSS style.
 	-->
-	<canvas id="videoCanvas" width="640" height="480">
+	<canvas id="videoCanvas" width="320" height="240">
 		<p>
 			Please use a browser that supports the Canvas Element, like
 			<a href="http://www.google.com/chrome">Chrome</a>,
@@ -122,10 +130,12 @@ div {
 		</p>
 	</canvas>
 	<div>
-	<form class="basic-grey">
-		<input type='button' class='button' id='btnOn' value="Licht aan" />
-		<input type='button' class='button'  id='btnOff' value="Licht uit" /><br>
-		<input type='range' min=0 max=255 value=255 id="rngBri"/>
+		<form  id='btnContainer' class="basic-grey">
+			<p>
+				<input type='button' class='button' id='btnOn' value="Licht aan" />
+				<input type='button' class='button'  id='btnOff' value="Licht uit" /><br>
+				<input type='range' min=0 max=255 value=255 id="rngBri"/>
+			</p>
 		</form>
 	</div>
 	<iframe src="http://www.ustream.tv/embed/13371060?wmode=direct" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen frameborder="no" width="480" height="302"></iframe><br />
@@ -135,7 +145,7 @@ div {
 		var client = new WebSocket( 'ws://84.106.64.128:8084/' );
 		// var client = new WebSocket( 'ws://localhost:8084/' );
 		var canvas = document.getElementById('videoCanvas');
-		var player = new jsmpeg(client, {canvas:canvas});
+		var player = new jsmpeg(client, {'canvas':canvas});
 		var d = new Date();
 		var messagePerSecond = 3;
 		var rate = 1000/messagePerSecond;
@@ -145,6 +155,18 @@ div {
 		btnOn = document.getElementById("btnOn");
 		btnOff = document.getElementById("btnOff");
 		rngBri = document.getElementById("rngBri");
+		btnTakePic = document.getElementById("btnTakePic");
+		function launchIntoFullscreen(element) {
+		  if(element.requestFullscreen) {
+		    element.requestFullscreen();
+		  } else if(element.mozRequestFullScreen) {
+		    element.mozRequestFullScreen();
+		  } else if(element.webkitRequestFullscreen) {
+		    element.webkitRequestFullscreen();
+		  } else if(element.msRequestFullscreen) {
+		    element.msRequestFullscreen();
+		  }
+		}
 		function setBrightness(force){
 			var bri = rngBri.value;
 	    	var t = (new Date()).getTime();
@@ -182,8 +204,35 @@ div {
 	    rngBri.onchange = function(event){
 	    	setBrightness(true);
 	    }
-
-
+	    
+	    var changeHandler = function(event){                                           
+    		if(event.target.style.width == screen.width+"px"){
+    			console.log("exit fullscreen");
+    			canvas.style.width = "640px";
+	    		canvas.style.height = "480px";
+    		}else{
+    			console.log("enter fullscreen");
+    			var w =screen.width+"px";
+    			var h =screen.height+"px";
+    			if(w>h){
+    				w = h * 640/480
+    			}else{
+    				h = w / (640/480);
+    			}
+    			canvas.style.width = w +"px";
+	    		canvas.style.height = h+"px";
+    		};
+	      console.log(event);                                                                                               
+	   }                                                                         
+	   document.addEventListener("fullscreenchange", changeHandler, false);      
+	   document.addEventListener("webkitfullscreenchange", changeHandler, false);
+	   document.addEventListener("mozfullscreenchange", changeHandler, false);
+	    Hammer(canvas).on('doubletap', function(){
+	    	console.log('tap');
+	    	launchIntoFullscreen(canvas);
+	    	// canvas.width
+	    	
+	    })
 	</script>
 </body>
 </html>
