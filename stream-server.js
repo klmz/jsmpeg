@@ -113,7 +113,7 @@ io.on('connection', function(socket) {
                         method: 'PUT',
                         json: {
                             "on": true,
-                            "bri": msg.bri
+                            "bri": parseInt(msg.bri)
                         }
                     }, function(e) {
                             console.log(e);
