@@ -132,13 +132,19 @@ div {
 	<script type="text/javascript">
 		// Setup the WebSocket connection and start the player
 		var client = new WebSocket( 'ws://84.106.64.128:8084/' );
+		// var client = new WebSocket( 'ws://localhost:8084/' );
 		var canvas = document.getElementById('videoCanvas');
 		var player = new jsmpeg(client, {canvas:canvas});
-
+		var d = new Date();
+		var messagePerSecond = 3;
+		var rate = 1000/messagePerSecond;
+		var last=d.getTime();
 		var socket = new WebSocket('ws://84.106.64.128:5002/');
+		// var socket = new WebSocket('ws://localhost:5002/');
 		btnOn = document.getElementById("btnOn");
 		btnOff = document.getElementById("btnOff");
 		rngBri = document.getElementById("rngBri");
+
 		btnOn.onclick = function() {
 	        console.log('test');
 	        socket.send(JSON.stringify({
@@ -154,6 +160,20 @@ div {
 	            type: 'lights',
 	            data: 'off'
 	        }));
+	    }
+	    
+	    rngBri.oninput = function(event){
+	    	var bri = rngBri.value;
+	    	var t = (new Date()).getTime();
+	    	if(t > last+rate){
+	    		console.log(bri);
+	    		last = t;
+	    		socket.send(JSON.stringify({
+	            type: 'lights',
+	            data: 'on',
+	            bri: bri
+	        }));
+	    	}
 	    }
 	</script>
 </body>
